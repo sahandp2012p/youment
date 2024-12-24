@@ -34,13 +34,13 @@
       </p>
 
       <button
-  type="submit"
-  class="block mx-auto w-2/4 px-2 py-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-  v-if="comment"
-  @click="setShowtop"
->
-  {{ showtop ? 'Hide Best Comment' : 'Show Best Comment' }}
-</button>
+        type="submit"
+        class="block mx-auto w-2/4 px-2 py-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        v-if="comment"
+        @click="setShowtop"
+      >
+        {{ showtop ? "Hide Best Comment" : "Show Best Comment" }}
+      </button>
 
       <!-- Display the best comment only if it's available -->
       <p v-if="showtop" class="text-center text-gray-700">
@@ -68,7 +68,7 @@ const setShowtop = async () => {
 
 const formSubmit = async () => {
   // Clear previous results when submitting a new video ID
-  showtop.value = false
+  showtop.value = false;
   result.value = "";
   comment.value = "";
   loading.value = true;
@@ -118,4 +118,4 @@ input:focus,
 button:focus {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-</style> 
+</style>
