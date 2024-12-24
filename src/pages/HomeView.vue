@@ -33,8 +33,17 @@
         {{ result }}
       </p>
 
+      <button
+  type="submit"
+  class="block mx-auto w-2/4 px-2 py-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+  v-if="comment"
+  @click="setShowtop"
+>
+  {{ showtop ? 'Hide Best Comment' : 'Show Best Comment' }}
+</button>
+
       <!-- Display the best comment only if it's available -->
-      <p v-if="comment" class="text-center text-gray-700">
+      <p v-if="showtop" class="text-center text-gray-700">
         Best comment: {{ comment }} Score: {{ rating * 10 }}/10
       </p>
     </div>
@@ -48,12 +57,18 @@ import Spinner from "../components/Spinner.vue";
 
 const videoId = ref(""); // Bound to the input
 const loading = ref(false); // Controls spinner visibility
+const showtop = ref(false);
 const result = ref(""); // Display result
 const comment = ref(""); // Text for top comment
 const rating = ref(0);
 
+const setShowtop = async () => {
+  showtop.value = !showtop.value;
+};
+
 const formSubmit = async () => {
   // Clear previous results when submitting a new video ID
+  showtop.value = false
   result.value = "";
   comment.value = "";
   loading.value = true;
@@ -103,4 +118,4 @@ input:focus,
 button:focus {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-</style>
+</style> 
