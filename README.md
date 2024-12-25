@@ -7,7 +7,7 @@ An application for YouTubers to analyze their comments given a score from 1 to 1
 First you will have to clone this repo:
 
 ```bash
-$ git clone https://github.com/sahandp2012p/youtube_comments.git
+$ git clone https://github.com/sahandp2012p/youment.git
 ```
 
 Then, You will first have to [install bun](https://bun.sh/).
