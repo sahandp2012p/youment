@@ -5,13 +5,13 @@ Thank you for considering contributing to this project! Your help is greatly app
 ## How to Contribute
 
 1. **Fork the Repository**  
-   Click the "Fork" button at the top-right corner of the [repository page](https://github.com/sahandp2012p/youtube_comments) to create your own copy.
+   Click the "Fork" button at the top-right corner of the [repository page](https://github.com/sahandp2012p/youment) to create your own copy.
 
 2. **Clone Your Fork**  
    Clone your forked repository to your local machine:
 
    ```bash
-   git clone https://github.com/<your-username>/youtube_comments.git
+   git clone https://github.com/<your-username>/youment.git
    ```
 3. **Make Your Changees**
    Create a new branch for your changes and make your edits.
@@ -35,7 +35,7 @@ Thank you for considering contributing to this project! Your help is greatly app
    ```
 
 6. **Open a Pull Request**  
-   Go to the original repository ([sahandp2012p/youtube_comments](https://github.com/sahandp2012p/youtube_comments)):
+   Go to the original repository ([sahandp2012p/youment](https://github.com/sahandp2012p/youment)):
 
    - Click on the **"Pull Requests"** tab at the top of the page.
    - Click on the **"New Pull Request"** button.
