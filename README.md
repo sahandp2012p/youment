@@ -30,7 +30,7 @@ We welcome contributions from everyone! 🎉
 If you'd like to contribute, please follow the instructions in our [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Thank you to all the amazing contributors who help improve this project! ❤️  
-You can see a full list of contributors [here](https://github.com/sahandp2012p/youtube_comments/graphs/contributors).
+You can see a full list of contributors [here](https://github.com/sahandp2012p/youment/graphs/contributors).
 
 ## FAQ
 
