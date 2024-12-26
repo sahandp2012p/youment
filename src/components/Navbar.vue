@@ -1,12 +1,12 @@
 <template>
   <nav
-    class="flex items-center justify-between px-4 py-2 bg-white shadow-lg md:flex-nowrap"
+    class="navbar glass"
   >
-    <div class="flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-gray-800">YouMent</a>
+    <div class="navbar-start flex flex-grow items-center justify-between">
+      <a href="/" class="btn btn-ghost text-xl font-bold text-gray-800">YouMent</a>
       <button
         id="menu-btn"
-        class="md:hidden focus:outline-none w-20 h-20 relative bg-white flex items-center justify-center"
+        class="md:hidden focus:outline-none btn btn-neutral w-20 h-20 relative flex items-center justify-center"
         @click="toggleMenu"
       >
         <!-- hamburger menu svg
@@ -25,22 +25,22 @@
           ></path>
         </svg> -->
         <div
-          class="menu-btn__line block w-8 h-1 bg-gray-800 rounded-full transition-all ease-linear duration-200"
+          class="menu-btn__line block w-8 h-1 bg-neutral-content rounded-full transition-all ease-linear duration-200"
         ></div>
       </button>
     </div>
     <ul
       ref="menu"
       id="menu"
-      class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out md:overflow-visible md:max-h-none md:flex md:flex-row md:space-x-8"
+      class="menu menu-vertical bg-transparent fixed md:h-auto top-0 bottom-0 -left-32 md:static h-screen transition-all duration-150 ease-in-out opacity-0 md:opacity-100 md:menu-horizontal"
     >
       <li>
-        <RouterLink to="/" class="text-gray-700 hover:text-indigo-500"
+        <RouterLink to="/" class="text-base-content"
           >Home</RouterLink
         >
       </li>
       <li>
-        <RouterLink to="/onecomment" class="text-gray-700 hover:text-indigo-500"
+        <RouterLink to="/onecomment" class="text-base-content"
           >One Comment Test</RouterLink
         >
       </li>
@@ -57,30 +57,26 @@ const isOpen = ref(false);
 
 const toggleMenu = () => {
   if (menu.value) {
-    isOpen.value = !isOpen.value;
-    if (isOpen.value) {
-      menu.value.style.maxHeight = menu.value.scrollHeight + "px";
+      menu.value.classList.toggle("menu--open")
       document
         .querySelector(".menu-btn__line")
         .classList.toggle("menu-btn__line--open");
-    } else {
-      menu.value.style.maxHeight = "0";
-      document
-        .querySelector(".menu-btn__line")
-        .classList.toggle("menu-btn__line--open");
-    }
   }
 };
 </script>
 
 <style scoped>
+.menu--open {
+  @apply opacity-100 bg-base-200 left-0
+}
+
 .menu-btn__line--open {
   @apply bg-transparent;
 }
 
 .menu-btn__line::after,
 .menu-btn__line::before {
-  @apply block relative w-8 h-1 bg-gray-800 rounded-full transition-all ease-linear duration-200;
+  @apply block relative w-8 h-1 bg-neutral-content rounded-full transition-all ease-linear duration-200;
   content: "";
 }
 
@@ -100,7 +96,8 @@ const toggleMenu = () => {
   @apply bottom-[0.1rem] -rotate-45;
 }
 
-/* Small screens */
+/* 
+Small screens 
 @media (max-width: 768px) {
   #menu {
     max-height: 0;
@@ -109,12 +106,13 @@ const toggleMenu = () => {
   }
 }
 
-/* Medium and larger screens */
+Medium and larger screens 
 @media (min-width: 768px) {
   #menu {
     max-height: none;
     overflow: visible;
     display: flex;
   }
-}
+} */
+
 </style>
