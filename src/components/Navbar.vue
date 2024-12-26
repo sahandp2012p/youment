@@ -1,9 +1,9 @@
 <template>
-  <nav
-    class="navbar glass"
-  >
+  <nav class="navbar glass">
     <div class="navbar-start flex flex-grow items-center justify-between">
-      <a href="/" class="btn btn-ghost text-xl font-bold text-gray-800">YouMent</a>
+      <a href="/" class="btn btn-ghost text-xl font-bold text-gray-800"
+        >YouMent</a
+      >
       <button
         id="menu-btn"
         class="md:hidden focus:outline-none btn btn-neutral w-20 h-20 relative flex items-center justify-center"
@@ -35,9 +35,7 @@
       class="menu menu-vertical bg-transparent fixed md:h-auto top-0 bottom-0 -left-32 md:static h-screen transition-all duration-150 ease-in-out opacity-0 md:opacity-100 md:menu-horizontal"
     >
       <li>
-        <RouterLink to="/" class="text-base-content"
-          >Home</RouterLink
-        >
+        <RouterLink to="/" class="text-base-content">Home</RouterLink>
       </li>
       <li>
         <RouterLink to="/onecomment" class="text-base-content"
@@ -57,17 +55,17 @@ const isOpen = ref(false);
 
 const toggleMenu = () => {
   if (menu.value) {
-      menu.value.classList.toggle("menu--open")
-      document
-        .querySelector(".menu-btn__line")
-        .classList.toggle("menu-btn__line--open");
+    menu.value.classList.toggle("menu--open");
+    document
+      .querySelector(".menu-btn__line")
+      .classList.toggle("menu-btn__line--open");
   }
 };
 </script>
 
 <style scoped>
 .menu--open {
-  @apply opacity-100 bg-base-200 left-0
+  @apply opacity-100 bg-base-200 left-0;
 }
 
 .menu-btn__line--open {
@@ -114,5 +112,4 @@ Medium and larger screens
     display: flex;
   }
 } */
-
 </style>
