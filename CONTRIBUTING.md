@@ -1,4 +1,4 @@
-# Contributing to YouTube Comments Sentiment Analysis
+# Contributing to YouMent Analysis
 
 Thank you for considering contributing to this project! Your help is greatly appreciated. 🎉
 
