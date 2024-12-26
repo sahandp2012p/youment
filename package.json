@@ -1,6 +1,6 @@
 {
   "name": "youtube_comments",
-  "version": "1.5.1",
+  "version": "1.6.1",
   "description": "This app gives the sentiment of your comments from a scale 1 to 10",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,9 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.22",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.14"
