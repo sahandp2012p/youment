@@ -1,52 +1,53 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-gray-50">
-    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-      <!-- Card content -->
-      <h1 class="text-3xl font-semibold text-center mb-6 text-gray-800">
-        YouMent
-      </h1>
+  <div class="flex items-center justify-center min-h-screen bg-base-200">
+    <div class="card w-full max-w-md shadow-2xl bg-base-100">
+  <div class="card-body">
+    <h1 class="text-3xl font-semibold text-center mb-6">YouMent</h1>
 
-      <form @submit.prevent="formSubmit" class="space-y-4">
-        <label for="id" class="block text-sm font-medium text-gray-600">
-          Enter Video ID:
+    <form @submit.prevent="formSubmit" class="space-y-4">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Enter Video ID:</span>
         </label>
         <input
           type="text"
           v-model="videoId"
-          class="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
           placeholder="e.g., dQw4w9WgXcQ"
+          class="input input-bordered"
           required
         />
-
-        <button
-          type="submit"
-          class="w-full px-4 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          Get Score
-        </button>
-      </form>
-
-      <Spinner v-if="loading" />
-
-      <!-- Display the result only if it's available -->
-      <p v-if="result" class="mt-4 text-center text-gray-700">
-        {{ result }}
-      </p>
+      </div>
 
       <button
         type="submit"
-        class="block mx-auto w-2/4 px-2 py-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        v-if="comment"
-        @click="setShowtop"
-      >
-        {{ showtop ? "Hide Best Comment" : "Show Best Comment" }}
+        class="btn btn-primary w-full">
+        Get Score
       </button>
+    </form>
 
-      <!-- Display the best comment only if it's available -->
-      <p v-if="showtop" class="text-center text-gray-700">
+    <Spinner v-if="loading" />
+
+    <div v-if="result" class="text-center mt-4">
+      <p class="text-gray-500">{{ result }}</p>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary w-full mx-auto"
+      v-if="comment"
+      @click="setShowtop"
+    >
+      {{ showtop ? "Hide Best Comment" : "Show Best Comment" }}
+    </button>
+
+    <div v-if="showtop" class="text-center mt-4">
+      <p class="text-gray-500">
         Best comment: {{ comment }} Score: {{ rating * 10 }}/10
       </p>
     </div>
+  </div>
+</div>
+
   </div>
 </template>
 
