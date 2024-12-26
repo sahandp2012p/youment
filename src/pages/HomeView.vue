@@ -1,53 +1,50 @@
 <template>
   <div class="flex items-center justify-center min-h-screen bg-base-200">
     <div class="card w-full max-w-md shadow-2xl bg-base-100">
-  <div class="card-body">
-    <h1 class="text-3xl font-semibold text-center mb-6">YouMent</h1>
+      <div class="card-body">
+        <h1 class="text-3xl font-semibold text-center mb-6">YouMent</h1>
 
-    <form @submit.prevent="formSubmit" class="space-y-4">
-      <div class="form-control">
-        <label class="label">
-          <span class="label-text">Enter Video ID:</span>
-        </label>
-        <input
-          type="text"
-          v-model="videoId"
-          placeholder="e.g., dQw4w9WgXcQ"
-          class="input input-bordered"
-          required
-        />
+        <form @submit.prevent="formSubmit" class="space-y-4">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Enter Video ID:</span>
+            </label>
+            <input
+              type="text"
+              v-model="videoId"
+              placeholder="e.g., dQw4w9WgXcQ"
+              class="input input-bordered"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full">
+            Get Score
+          </button>
+        </form>
+
+        <Spinner v-if="loading" />
+
+        <div v-if="result" class="text-center mt-4">
+          <p class="text-gray-500">{{ result }}</p>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary w-full mx-auto"
+          v-if="comment"
+          @click="setShowtop"
+        >
+          {{ showtop ? "Hide Best Comment" : "Show Best Comment" }}
+        </button>
+
+        <div v-if="showtop" class="text-center mt-4">
+          <p class="text-gray-500">
+            Best comment: {{ comment }} Score: {{ rating * 10 }}/10
+          </p>
+        </div>
       </div>
-
-      <button
-        type="submit"
-        class="btn btn-primary w-full">
-        Get Score
-      </button>
-    </form>
-
-    <Spinner v-if="loading" />
-
-    <div v-if="result" class="text-center mt-4">
-      <p class="text-gray-500">{{ result }}</p>
     </div>
-
-    <button
-      type="submit"
-      class="btn btn-primary w-full mx-auto"
-      v-if="comment"
-      @click="setShowtop"
-    >
-      {{ showtop ? "Hide Best Comment" : "Show Best Comment" }}
-    </button>
-
-    <div v-if="showtop" class="text-center mt-4">
-      <p class="text-gray-500">
-        Best comment: {{ comment }} Score: {{ rating * 10 }}/10
-      </p>
-    </div>
-  </div>
-</div>
-
   </div>
 </template>
 

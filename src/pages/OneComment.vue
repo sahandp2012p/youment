@@ -18,9 +18,7 @@
             />
           </div>
 
-          <button
-            type="submit"
-            class="btn btn-primary w-full">
+          <button type="submit" class="btn btn-primary w-full">
             Get Score
           </button>
         </form>
