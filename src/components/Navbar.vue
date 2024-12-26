@@ -1,12 +1,10 @@
 <template>
-  <nav class="navbar glass">
+  <nav class="navbar backdrop-blur">
     <div class="navbar-start flex flex-grow items-center justify-between">
-      <a href="/" class="btn btn-ghost text-xl font-bold text-gray-800"
-        >YouMent</a
-      >
+      <a href="/" class="btn btn-ghost text-xl font-bold">YouMent</a>
       <button
         id="menu-btn"
-        class="md:hidden focus:outline-none btn btn-neutral w-20 h-20 relative flex items-center justify-center"
+        class="md:hidden focus:outline-none btn btn-neutral text-neutral-content w-20 h-20 relative flex items-center justify-center"
         @click="toggleMenu"
       >
         <!-- hamburger menu svg
