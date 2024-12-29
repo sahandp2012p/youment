@@ -13,7 +13,7 @@ export default defineConfig({
       postcss: {
         plugins: [autoprefixer],
       },
-    },
+    }
   ],
   css: {
     preprocessorOptions: {
@@ -22,11 +22,13 @@ export default defineConfig({
       },
     },
   },
+  assetsInclude: ['**/*.xml'],
   build: {
     sourcemap: true, // Enable sourcemaps for both JS and CSS
     rollupOptions: {
       input: {
         main: path.resolve("src", "index.html"),
+        sitemap: path.resolve("src", "sitemap.xml")
       },
     },
     outDir: "../dist",
