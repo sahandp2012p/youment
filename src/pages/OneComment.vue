@@ -68,13 +68,6 @@ const formSubmit = async () => {
 </script>
 
 <style scoped>
-/* Styling for general layout */
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 input,
 button {
   transition: all 0.3s ease-in-out;
