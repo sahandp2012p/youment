@@ -21,9 +21,11 @@ def get_sentiment(id):
         sentiment_dict = sentiment_object.polarity_scores(pipeline(comment))
         polarity.append(sentiment_dict["compound"])
         comments.append(comment)
-        if sentiment_dict['compound'] >= -1 and sentiment_dict['compound']<= (-1/3):
+        if sentiment_dict["compound"] >= -1 and sentiment_dict["compound"] <= (-1 / 3):
             negative_count += 1
-        elif sentiment_dict['compound'] > (-1/3) and sentiment_dict['compound'] < (1/3):
+        elif sentiment_dict["compound"] > (-1 / 3) and sentiment_dict["compound"] < (
+            1 / 3
+        ):
             neutral_count += 1
         else:
             positive_count += 1
@@ -36,7 +38,13 @@ def get_sentiment(id):
     sorted_pairs = sorted(score_index_pairs, key=lambda x: x[0], reverse=True)
     scores, sorted_indices = zip(*sorted_pairs)
     comments = [comments[i] for i in sorted_indices]
-    return sum(polarity) / len(polarity), len(polarity), comments[0], scores[0], (negaitve_percentage, neutral_percentage, positive_percentage)
+    return (
+        sum(polarity) / len(polarity),
+        len(polarity),
+        comments[0],
+        scores[0],
+        (negaitve_percentage, neutral_percentage, positive_percentage),
+    )
 
 
 def comment_score(comment):
